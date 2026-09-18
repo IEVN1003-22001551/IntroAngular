@@ -1,0 +1,29 @@
+<div class="contenedorfigura">
+<h2>Calculadora de figuras</h2>
+<div class="seleccion">
+   <label><input type="radio" name="figura" value="triangulo" [(ngModel)]="figuraSeleccionada"> Triangulo</label>
+    <label><input type="radio" name="figura" value="rectangulo" [(ngModel)]="figuraSeleccionada"> Rectangulo</label>
+    <label><input type="radio" name="figura" value="circulo" [(ngModel)]="figuraSeleccionada"> Circulo</label>
+    <label><input type="radio" name="figura" value="cuadrado" [(ngModel)]="figuraSeleccionada"> Cuadrado</label>
+    <label><input type="radio" name="figura" value="pentagono" [(ngModel)]="figuraSeleccionada"> Pentagono</label>
+</div>
+
+<hr>
+
+<div>
+    <label>Valor 1 (Base, Lado o Radio):</label>
+    <input type="number" [(ngModel)]="valor1" placeholder="Ingresa el primer valor">
+</div>
+<div *ngIF="figuraseleccionada === 'triangulo' || figuraseleccionada === 'rectangulo' || figuraseleccionada === 'pentagono'">
+ <label>Valor 2 (Altura o Apotema):</label>
+    <input type="number" [(ngModel)]="valor2" placeholder="Ingresa el segundo valor">
+</div>
+<br>
+<button (click)="Calcular()">Calcular</button>
+<hr>
+<div *ngIf="resultadoarea !== null">
+    <h3>Resultados:</h3>
+    <p><strong>area:</strong> {{ resultadoarea | number:'1.2-2' }}</p>
+    <p><strong>Perimetro:</strong> {{ resultadoperimetro | number:'1.2-2' }}</p>
+  </div>
+</div>
