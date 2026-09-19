@@ -1,0 +1,11 @@
+<div>
+  <h2>Analizador de Frases</h2>
+  
+  <input type="text" [(ngModel)]="frase" placeholder="pon una frase">
+  <button (click)="analizar()">Analizar</button>
+  <div *ngIf="mensaje !== ''">
+    <p>numero de Vocales: {{ vocales }}</p>
+    <p>Numero de Consonantes: {{ consonantes }}</p>
+    <p>Es palindromo?: {{ mensaje }}</p>
+  </div>
+</div>

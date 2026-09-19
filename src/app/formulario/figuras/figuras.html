@@ -14,16 +14,16 @@
     <label>Valor 1 (Base, Lado o Radio):</label>
     <input type="number" [(ngModel)]="valor1" placeholder="Ingresa el primer valor">
 </div>
-<div *ngIF="figuraseleccionada === 'triangulo' || figuraseleccionada === 'rectangulo' || figuraseleccionada === 'pentagono'">
+<div *ngIf="figuraSeleccionada === 'triangulo' || figuraSeleccionada === 'rectangulo' || figuraSeleccionada === 'pentagono'">
  <label>Valor 2 (Altura o Apotema):</label>
     <input type="number" [(ngModel)]="valor2" placeholder="Ingresa el segundo valor">
 </div>
 <br>
 <button (click)="Calcular()">Calcular</button>
 <hr>
-<div *ngIf="resultadoarea !== null">
+<div *ngIf="resultadoArea !== null">
     <h3>Resultados:</h3>
-    <p><strong>area:</strong> {{ resultadoarea | number:'1.2-2' }}</p>
-    <p><strong>Perimetro:</strong> {{ resultadoperimetro | number:'1.2-2' }}</p>
+    <p><strong>Area:</strong> {{ resultadoArea | number:'1.2-2' }}</p>
+    <p><strong>Perimetro:</strong> {{ resultadoPerimetro | number:'1.2-2' }}</p>
   </div>
 </div>

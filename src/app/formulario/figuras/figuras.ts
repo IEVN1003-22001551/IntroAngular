@@ -7,42 +7,44 @@ import { Component } from '@angular/core';
   templateUrl: './figuras.html',
 })
 export class Figuras {
-  figuraseleccionada: string= 'triangulo';
+  figuraSeleccionada: string = 'triangulo';
 
-  valor1: number=0;
-  valor2: number=0;
+  valor1: number = 0;
+  valor2: number = 0;
 
-  resultadoarea: number | null= null;
-  resultadoperimetro: number | null = null;
+  resultadoArea: number | null = null;
+  resultadoPerimetro: number | null = null;
 
-  Calcular(){
-    switch (figuraseleccionada) {
+  Calcular() {
+    switch (this.figuraSeleccionada) {
       case 'triangulo':
-        this.resultadoarea = (this.valor1 * this.valor2)/2;
-        this.resultadoperimetro = this.valor1 * 3;
+        this.resultadoArea = (this.valor1 * this.valor2) / 2;
+        this.resultadoPerimetro = this.valor1 * 3;
         break;
 
-        case 'circulo':
-        this.resultadoarea = Math.PI * Math.pow(this.valor1, 2);
-        this.resultadoperimetro = 2 * Math.PI * this.valor1;
+      case 'circulo':
+        this.resultadoArea = Math.PI * Math.pow(this.valor1, 2);
+        this.resultadoPerimetro = 2 * Math.PI * this.valor1;
         break;
 
-        case 'Cuadrado':
-        this.resultadoarea = Math.pow(this.valor1, 2);
-        this.resultadoperimetro = this.valor1 * 4;
+      case 'cuadrado':
+        this.resultadoArea = Math.pow(this.valor1, 2);
+        this.resultadoPerimetro = this.valor1 * 4;
         break;
 
-        case 'Rectangulo':
-        this.resultadoarea = this.valor1 * this.valor2;
-        this.resultadoperimetro = (this.valor1 * 2) + (this.valor2 * 2);
+      case 'rectangulo':
+        this.resultadoArea = this.valor1 * this.valor2;
+        this.resultadoPerimetro = this.valor1 * 2 + this.valor2 * 2;
         break;
 
-        case 'Pentagono':
-       this.resultadoperimetro = this.valor1 * 5; 
-        this.resultadoarea = (this.resultadoPerimetro * this.valor2) / 2;
+      case 'pentagono':
+        this.resultadoPerimetro = this.valor1 * 5;
+        this.resultadoArea = (this.resultadoPerimetro * this.valor2) / 2;
         break;
-    
+
       default:
+        this.resultadoArea = null;
+        this.resultadoPerimetro = null;
         break;
     }
   }

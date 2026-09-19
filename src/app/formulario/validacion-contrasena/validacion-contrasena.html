@@ -1,0 +1,24 @@
+<div>
+  <h2>INICIO DE SESION</h2>
+  
+  <div>
+    <label for="usuario">Usuario:</label>
+   
+    <input type="text" id="usuario" [(ngModel)]="ingresarUsuaio" placeholder="ingresarUsuaio">
+  </div>
+  
+  <div>
+    <label for="contrasena">Contrasena:</label>
+   
+    <input type="password" id="contrasena" [(ngModel)]="ingresarContrasena" placeholder="ingresarUsuaio">
+  </div>
+  
+  <div>
+    
+    <button (click)="validar()">[ Iniciar sesion ]</button>
+  </div>
+  
+  <div *ngIf="mensaje">
+    {{ mensaje }}
+  </div>
+</div>
